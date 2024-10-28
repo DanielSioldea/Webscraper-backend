@@ -5,7 +5,7 @@ def classify_users(responses):
     topic_scores = {'technology': 0, 'health': 0, 'business': 0}
 
     for question_id, response in responses.items():
-        topic =  question_id.split('_')[0]
+        topic =  question_id.split('_')[0] 
         topic_scores[topic] += int(response)
 
     
