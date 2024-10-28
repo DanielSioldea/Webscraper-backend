@@ -14,7 +14,9 @@
 >python app.py
 7. In HTTPie desktop change the dropdown before the URL to: POST
 8. Add a JSON text file to the Body tab containing your website URL:
->{"url: "https://www.example.com"}
+>{
+"url": "https://www.example.com"
+}
 9. Paste the server URL into the URL bar, followed by /scrape-content:
 >http://127.0.0.1:5000/scrape-content
 10. Press send and observe results
