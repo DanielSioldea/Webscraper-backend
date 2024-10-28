@@ -4,11 +4,17 @@
 ### Currently this is only the backend code for this project. To run this code as is please follow the steps below:
 
 1. Install and open HTTPie Desktop: https://httpie.io/
-2. Clone the repository: >git clone https://github.com/DanielSioldea/Webscraper-backend
-3. Install requirements: >pip install -r requirements.txt
-4. Install spaCy's NLP module: >python -m spacy download en_core_web_sm
-5. Start the Flask server: >python app.py
-6. In HTTPie desktop change the dropdown before the URL to: POST
-7. Add a JSON text file to the Body tab containing your website URL: >{"url: "https://www.example.com"}
-8. Paste the server URL into the URL bar, followed by /scrape-content: >http://127.0.0.1:5000/scrape-content
-9. Press send and observe results
+2. Clone the repository:
+>git clone https://github.com/DanielSioldea/Webscraper-backend
+4. Install requirements:
+>pip install -r requirements.txt
+5. Install spaCy's NLP module:
+>python -m spacy download en_core_web_sm
+6. Start the Flask server:
+>python app.py
+7. In HTTPie desktop change the dropdown before the URL to: POST
+8. Add a JSON text file to the Body tab containing your website URL:
+>{"url: "https://www.example.com"}
+9. Paste the server URL into the URL bar, followed by /scrape-content:
+>http://127.0.0.1:5000/scrape-content
+10. Press send and observe results
