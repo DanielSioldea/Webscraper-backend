@@ -19,7 +19,7 @@ def scrape_content():
     
     keywords = extract_keywords(content)
     topic_scores = categorize_topics(keywords)
-    return jsonify({'keywords': keywords[:5], 'topics': topic_scores})
+    return jsonify({'keywords': keywords[:10], 'topics': topic_scores})
 
 @app.route('/generate-questions', methods=['POST'])
 def generate_questions_route():

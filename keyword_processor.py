@@ -3,36 +3,10 @@
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 import random
+from questions import topics
 
 # Load the spaCy English language model
 processor = spacy.load('en_core_web_sm')
-
-topics = {
-    "technology": {
-        "keywords": ["AI", "machine learning", "software", "technology", "computing"],
-        "questions": [
-            {"question": "How interested are you in AI advancements?", "options": ["Not interested", "Somewhat interested", "Very interested"]},
-            {"question": "How likely are you to follow news about software development?", "options": ["Not likely", "Somewhat likely", "Very likely"]},
-            {"question": "How much do you follow trends in computing?", "options": ["Not at all", "Occasionally", "Often"]}
-            ]
-        },
-    "health": {
-        "keywords": ["health", "medicine", "wellness", "fitness", "nutrition"],
-        "questions": [
-            {"question": "How often do you read about health topics?", "options": ["Rarely", "Sometimes", "Frequently"]},
-            {"question": "How interested are you in fitness and wellness?", "options": ["Not interested", "Somewhat interested", "Very interested"]},
-            {"question": "How likely are you to explore new nutrition trends?", "options": ["Not likely", "Somewhat likely", "Very likely"]}
-            ]
-        },
-    "business": {
-        "keywords": ["finance", "business", "economics", "marketing", "sales"],
-        "questions": [
-            {"question": "How interested are you in business trends?", "options": ["Not interested", "Somewhat interested", "Very interested"]},
-            {"question": "Do you keep up with financial news?", "options": ["No", "Sometimes", "Yes"]},
-            {"question": "How much do you read about marketing and sales strategies?", "options": ["Rarely", "Occasionally", "Often"]}
-            ]
-        }
-    }
 
 # Define a function to extract keywords from the text
 def extract_keywords(text):
@@ -62,4 +36,4 @@ def generate_questions(topic_scores):
     for topic, score in topic_scores.items():
         if score > 0:
             questions.extend(topics[topic]["questions"])
-    return random.sample(questions, min(5, len(questions)))
+    return random.sample(questions, min(10, len(questions)))
